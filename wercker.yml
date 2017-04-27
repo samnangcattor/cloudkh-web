@@ -1,0 +1,25 @@
+box: samnangcattor/cloudkh
+build:
+  steps:
+    - script:
+        name: PATH
+        code: |
+          echo $PATH
+    - script:
+        name: node npm phantomjs versions
+        code: |
+          node -v
+          npm -v
+          phantomjs -v
+          which phantomjs
+    - olger/yeoman-bower-install
+    - wercker/npm-install
+    - script:
+        name: jshint
+        code: grunt jshint:all
+    - script:
+        name: Environment test
+        code: grunt replace:test
+    - grunt:
+        tasks: clean build
+        fail-on-warnings: true
