@@ -27,7 +27,10 @@ If yo command does not work...
 npm install -g yo
 npm install -g generator-angular
 ```
+
 ## Build & development
 
-```
+Run `grunt replace:development` for using API Client for development
+Run `grunt replace:production` for using API Client for production
+
 Run grunt for building and grunt serve for preview.
