@@ -9,11 +9,6 @@
  */
 angular.module('cloudWebApp')
   .controller('MainCtrl', [
-    'Users',
     function (
-      Users
     ) {
-      Users.get().then(function(user) {
-        console.log(user);
-      });
   }]);
