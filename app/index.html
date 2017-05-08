@@ -2,9 +2,10 @@
 <html ng-app="cloudWebApp">
   <head>
     <meta charset="utf-8">
-    <title></title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
+    <base href="/">
+    <title>CloudKH</title>
+    <meta name="description" content="cloudKH store video google drive youtube">
+    <meta name="viewport" content="width=device-width,initial-scale=0.8,maximum-scale=0.8">
     <link rel="stylesheet" href="bower_components/gentelella/vendors/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="bower_components/gentelella/vendors/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="bower_components/gentelella/vendors/iCheck/skins/flat/green.css">
@@ -12,13 +13,13 @@
     <link rel="stylesheet" href="bower_components/gentelella/vendors/jqvmap/dist/jqvmap.min.css">
     <link rel="stylesheet" href="bower_components/gentelella/build/css/custom.min.css">
   </head>
-  <body ng-controller="MainCtrl" class="nav-md">
+  <body ng-controller="cloudKhMaterial" class="nav-md">
     <div class="container body">
       <div class="main_container">
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
-              <a href="index.html" class="site_title">
+              <a href="/" class="site_title">
                 <i class="fa fa-paw"></i>
                 <span>CloudKh</span>
               </a>
@@ -37,11 +38,13 @@
               <div class="menu_section">
                 <h3>General</h3>
                 <ul class="nav side-menu" style="">
-                  <li><a><i class="fa fa-home"></i> Home <span class="fa fa-chevron-down"></span></a>
+                  <li><a><i class="fa fa-user"></i> User <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu" style="display: none;">
-                      <li class="current-page"><a href="index.html">Dashboard1</a></li>
-                      <li><a href="views/main.html">Show All User</a></li>
-                      <li><a href="index3.html">Dashboard3</a></li>
+                      <li ng-repeat="item in menuUser">
+                        <a ng-click="callByMenu(item.action)">
+                          <i ng-class="item.icon"></i><span ng-bind="item.title"></span>
+                        </a>
+                      </li>
                     </ul>
                   </li>
                   <li><a><i class="fa fa-edit"></i> Forms <span class="fa fa-chevron-down"></span></a>
@@ -229,8 +232,13 @@
             </nav>
           </div>
         </div>
+        <!-- Main Contents -->
         <div class="right_col" role="main">
+          <ui-view layout="column" layout-fill layout-padding>
+            <div ng-view=""></div>
+          </ui-view>
         </div>
+        <!-- / Main Contents -->
       </div>
     </div>
     <!-- build:js(.) scripts/vendor.js -->
@@ -244,6 +252,7 @@
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
     <script src="bower_components/gentelella/build/js/custom.min.js"></script>
@@ -254,5 +263,8 @@
     <!-- setup environments-->
     <script src="scripts/services/environments.js"></script>
     <script src="scripts/services/users.js"></script>
+
+    <!-- load components -->
+    <script src="scripts/components/user-list/user-list.js"></script>
   </body>
 </html>
