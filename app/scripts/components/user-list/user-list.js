@@ -18,8 +18,10 @@ angular.module('cloudWebApp')
       $scope,
       Users
     ) {
-      Users.get().then(function(user) {
-        console.log(user);
+      var $ctrl = this;
+      $ctrl.items = ['#', 'Name', 'Action'];
+      Users.get().then(function(users) {
+        $ctrl.users = users;
       });
     }
   ]);

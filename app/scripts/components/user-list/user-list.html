@@ -1,3 +1,20 @@
 <div class="container body">
-  <h1>User List</h1>
+  <div class="x_title"><h2><i class="fa fa-align-left"></i> User List</h2></div>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th ng-bind="item" ng-repeat="item in $ctrl.items"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="user in $ctrl.users">
+        <th ng-bind="$index + 1"></th>
+        <td ng-bind="user.name"></td>
+        <td>
+          <a class="btn btn-round btn-info"><i class="fa fa-edit"></i> Edit<a/>
+          <a class="btn btn-round btn-danger"><i class="fa fa-trash"></i> Delete<a/>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>
