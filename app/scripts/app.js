@@ -18,9 +18,11 @@ angular
     'ngTouch',
     'services.environments',
     'ui.router',
+    'angular-loading-bar',
   ])
-  .config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
-    function($stateProvider, $urlRouterProvider, $locationProvider) {
+  .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', 'cfpLoadingBarProvider',
+    function($stateProvider, $urlRouterProvider, $locationProvider, cfpLoadingBarProvider) {
+      cfpLoadingBarProvider.includeSpinner = false;
       $locationProvider.html5Mode(true);
       $urlRouterProvider.otherwise('/');
       $stateProvider
