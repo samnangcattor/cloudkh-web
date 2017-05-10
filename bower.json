@@ -27,6 +27,14 @@
         "dist/css/bootstrap.css",
         "dist/js/bootstrap.js"
       ]
+    },
+    "ag-grid": {
+       "dependencies": {
+        "angular": "*"
+      },
+      "main": [
+       "dist/ag-grid.min.js"
+      ]
     }
   }
 }
