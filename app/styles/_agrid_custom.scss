@@ -1,0 +1,67 @@
+.ag-header-viewport {
+  background: #fff;
+}
+
+.ag-header-cell {
+  border-right-width: 0px;
+}
+
+.ag-header-cell-label {
+  font-weight: bold;
+}
+
+.ag-header-cell-label,
+.ag-header-cell-resize,
+.ag-body-viewport {
+  background: #fff;
+}
+.ag-body-container {
+  .ag-row {
+    border-bottom: 1px dashed #ccc;
+    &:last-child {
+      border-bottom: 1px solid #ccc;
+    }
+  }
+  .ag-row-odd,
+  .ag-row-no-focus {
+    background-color: #fff;
+  }
+  .ag-row-selected {
+    background-color: #eee;
+  }
+  .ag-cell-not-inline-editing {
+    padding: 0 8px;
+  }
+  .ag-cell-inline-editing input {
+    width: 100%;
+    height: 100%;
+    padding: 0 8px;
+    box-sizing: border-box;
+  }
+  .ag-cell-focus {
+    border: 2px solid #4db6ac;
+  }
+}
+.ag-floating-bottom-viewport {
+  font-size: 14px;
+  font-weight: bold;
+  background-color: #F6F6F6;
+  .ag-cell-value {
+    background-color: #fafafa;
+  }
+  .ag-row {
+    border-top: 2px solid #333;
+  }
+}
+
+.ag-fresh .ag-popup-editor .ag-rich-select {
+  border: 0px;
+}
+
+.ag-fresh .ag-ltr .ag-header-cell {
+  border-right: 0px solid #808080;
+}
+
+.ag-fresh .ag-root {
+  border: 0px solid #808080;
+}

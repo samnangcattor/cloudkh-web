@@ -31,7 +31,7 @@ module.exports = function(config) {
       'bower_components/angular-touch/angular-touch.js',
       'bower_components/angular-ui-router/release/angular-ui-router.js',
       'bower_components/angular-loading-bar/build/loading-bar.js',
-      'bower_components/ag-grid/main.js',
+      'bower_components/ag-grid/dist/ag-grid.min.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'app/scripts/**/*.js',

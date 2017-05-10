@@ -8,6 +8,7 @@
  *
  * Main module of the application.
  */
+agGrid.initialiseAgGridWithAngular1(angular); // jshint ignore:line
 angular
   .module('cloudWebApp', [
     'ngAnimate',
@@ -19,6 +20,7 @@ angular
     'services.environments',
     'ui.router',
     'angular-loading-bar',
+    'agGrid',
   ])
   .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', 'cfpLoadingBarProvider',
     function($stateProvider, $urlRouterProvider, $locationProvider, cfpLoadingBarProvider) {
