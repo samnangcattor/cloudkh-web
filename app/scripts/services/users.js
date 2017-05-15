@@ -18,8 +18,8 @@ angular.module('cloudWebApp')
       $httpParamSerializerJQLike
     ) {
       return {
-        get: function() {
-          return CloudKhApiClient.get('/users').then(function(response) {
+        getUser: function(id) {
+          return CloudKhApiClient.get('/users/' + id).then(function(response) {
             return response.data;
           });
         },

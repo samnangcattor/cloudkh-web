@@ -9,6 +9,19 @@
  */
 angular.module('cloudWebApp')
   .controller('UserCtrl', [
+    '$stateParams',
+    'Users',
+    '$scope',
     function (
+      $stateParams,
+      Users,
+      $scope
     ) {
+      var userId = $stateParams.userId;
+      // for user show
+      if (userId) {
+        Users.getUser(userId).then(function(data) {
+          $scope.data = data;
+        });
+      }
   }]);

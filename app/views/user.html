@@ -1,15 +1,15 @@
 <div class="x_panel">
   <div class="x_title">
-    <h2>User Name</h2>
+    <h2><span ng-bind="data.name"></span></h2>
     <div class="clearfix"></div>
   </div>
   <div class="x_content">
-    <div class="col-md-5 col-sm-5 col-xs-12">
+    <div class="col-md-3 col-sm-3 col-xs-12">
       <div class="product_gallery">
-        <img src="https://colorlib.com/polygon/gentelella/images/prod-1.jpg"/>
+        <img class="img-responsive avatar-view" src="{{data.avatar}}" style="width: 300px; height: 300px;"/>
       </div>
     </div>
-    <div class="col-md-7 col-sm-7 col-xs-12">
+    <div class="col-md-9 col-sm-9 col-xs-12">
       <h3 class="prod_title">User Information</h3>
       <h2>Status</h2>
       <ul class="list-inline prod_color">
@@ -18,14 +18,17 @@
           <span>active</span>
         </li>
       </ul>
+      <h2>Name</h2>
       <div class="product_price">
-        User name
+        <span ng-bind="data.name"></span>
       </div>
+      <h2>Age</h2>
       <div class="product_price">
-        15
+        <span ng-bind="data.age"></span>
       </div>
+      <h2>Address</h2>
       <div class="product_price">
-        User address
+        <span ng-bind="data.address"></span>
       </div>
       <div>
         <button type="button" class="btn btn-default btn-lg">Edit</button>
