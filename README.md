@@ -39,5 +39,5 @@ Run grunt for building and grunt serve for preview.
 
 Please copy from this link
 ```
-https://colorlib.com/polygon/gentelella
+https://colorlib.com/polygon/gentelella/index.html
 ```

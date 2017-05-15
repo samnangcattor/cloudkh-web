@@ -13,33 +13,67 @@ angular.module('cloudWebApp')
   })
   .controller('UserListCtrl', [
     '$scope',
-    'Users',
+    'UserListTableSettings',
+    'UserListService',
     function (
       $scope,
-      Users
+      UserListTableSettings,
+      UserListService
     ) {
       var $ctrl = this;
-
-      var columnDefs = [
-        {headerName: "Id", field: "id", width: 20},
-        {headerName: "Name", field: "name"},
-        {headerName: "Create", field: "created_at"},
-        {headerName: "Update", field: "updated_at"}
-      ];
+      var page = 1;
+      $ctrl.lastPage = 1;
+      $ctrl.currentPage = 1;
 
       $ctrl.gridOptions = {
         overlayLoadingTemplate: '<div class="ag-overlay-loading-center">' +
           '<div class="ag-overlay-loader"></div>' +
           '<span>Loading...</span>' +
           '</div>',
-        columnDefs: columnDefs,
-        rowData: null
+        columnDefs: UserListTableSettings.columnDefs,
+        rowData: null,
+        rowHeight: 28,
+        pagination: true,
+        suppressPaginationPanel: true
       };
 
-      Users.get().then(function(res) {
-        $ctrl.gridOptions.api.setRowData(res);
-      });
+      function loadUsers(params) {
+        UserListService.search(page).then(function(res) {
+          $ctrl.gridOptions.api.setRowData(res.users);
+          $ctrl.lastPage = res.last_page;
+          $ctrl.currentPage = res.current_page;
+          $ctrl.total = res.user_total;
+        });
+      }
+
+      $ctrl.onBtFirst = function() {
+        page = 1;
+        loadUsers(page);
+      };
+
+      $ctrl.onBtLast = function() {
+        page = $ctrl.lastPage;
+        loadUsers(page);
+      };
+
+      $ctrl.onBtPrevious = function() {
+        if (page >= 2) {
+          page -= 1;
+          loadUsers(page);
+        }
+      };
+
+      $ctrl.onBtNext = function() {
+        if (page < $ctrl.lastPage) {
+          page += 1;
+          loadUsers(page);
+        }
+      };
 
       setTimeout(()=> $ctrl.gridOptions.api.sizeColumnsToFit(), 0);
+
+      $ctrl.init = function() {
+        loadUsers();
+      };
     }
   ]);

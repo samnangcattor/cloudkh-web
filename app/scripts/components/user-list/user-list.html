@@ -1,9 +1,23 @@
-<div class="x_panel">
+<div class="x_panel" ng-init="$ctrl.init()">
   <div class="x_title">
     <h2><i class="fa fa-bars"></i> User List</h2>
     <div class="clearfix"></div>
   </div>
-  <div class="x_content" style="height: 600px">
+  <div>
+    Total: <span ng-bind="$ctrl.total"></span>
+  </div>
+  <div class="x_content" style="height: 750px">
     <div ag-grid="$ctrl.gridOptions" class="ag-fresh" style="height: 100%"></div>
+  </div>
+  <div>
+    <div>
+      Page: <span ng-bind="$ctrl.currentPage"></span> / <span ng-bind="$ctrl.lastPage"></span>
+    </div>
+    <div style="margin-top: 15px;">
+      <button class="btn btn-round btn-primary" ng-click="$ctrl.onBtFirst()" ng-disabled="$ctrl.currentPage === 1">To First</button>
+      <button class="btn btn-round btn-primary" ng-click="$ctrl.onBtPrevious()" ng-disabled="$ctrl.currentPage === 1">To Previous</button>
+      <button class="btn btn-round btn-primary" ng-click="$ctrl.onBtNext()" ng-disabled="$ctrl.currentPage === $ctrl.lastPage">To Next</button>
+      <button class="btn btn-round btn-primary" ng-click="$ctrl.onBtLast()" ng-disabled="$ctrl.currentPage === $ctrl.lastPage">To Last</button>
+    </div>
   </div>
 </div>
