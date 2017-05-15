@@ -37,6 +37,12 @@ angular
           url: '/userlist',
           template: '<user-list></user-list>',
           title: 'User List'
+        })
+        .state('user', {
+          url: '/users/:userId',
+          templateUrl: 'views/user.html',
+          controller: 'UserCtrl',
+          title: 'User Information'
         });
     }
   ])
