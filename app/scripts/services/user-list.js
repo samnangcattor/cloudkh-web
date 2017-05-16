@@ -4,7 +4,7 @@
  * @ngdoc service
  * @name cloudWebApp.UserListService
  * @description
- *  UserListService
+ * UserListService
  * Service in the cloudWebApp.
  */
 angular.module('cloudWebApp')

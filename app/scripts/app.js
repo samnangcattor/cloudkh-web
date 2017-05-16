@@ -43,6 +43,11 @@ angular
           templateUrl: 'views/user.html',
           controller: 'UserCtrl',
           title: 'User Information'
+        })
+        .state('videoList', {
+          url: '/videolist',
+          template: '<video-list></video-list>',
+          title: 'Video List'
         });
     }
   ])
@@ -64,6 +69,12 @@ angular
       $scope.menuUser = [{
         action: function() { $scope.sideNavMenuClick('left', 'userList'); },
         title: 'User List',
+        icon: 'fa fa-list'
+      }];
+
+      $scope.menuVideo = [{
+        action: function() { $scope.sideNavMenuClick('left', 'videoList'); },
+        title: 'Video List',
         icon: 'fa fa-list'
       }];
     }
