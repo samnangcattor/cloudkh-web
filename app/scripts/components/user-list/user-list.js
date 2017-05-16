@@ -35,7 +35,7 @@ angular.module('cloudWebApp')
         suppressPaginationPanel: true
       };
 
-      function loadUsers(params) {
+      function loadUsers() {
         UserListService.search(page).then(function(res) {
           $ctrl.gridOptions.api.setRowData(res.users);
           $ctrl.lastPage = res.last_page;
@@ -46,25 +46,25 @@ angular.module('cloudWebApp')
 
       $ctrl.onBtFirst = function() {
         page = 1;
-        loadUsers(page);
+        loadUsers();
       };
 
       $ctrl.onBtLast = function() {
         page = $ctrl.lastPage;
-        loadUsers(page);
+        loadUsers();
       };
 
       $ctrl.onBtPrevious = function() {
         if (page >= 2) {
           page -= 1;
-          loadUsers(page);
+          loadUsers();
         }
       };
 
       $ctrl.onBtNext = function() {
         if (page < $ctrl.lastPage) {
           page += 1;
-          loadUsers(page);
+          loadUsers();
         }
       };
 
