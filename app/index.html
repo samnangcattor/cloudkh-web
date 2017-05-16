@@ -48,6 +48,17 @@
                     </ul>
                   </li>
                 </ul>
+                <ul class="nav side-menu" style="">
+                  <li><a><i class="fa fa-file-video-o"></i> File <span class="fa fa-chevron-down"></span></a>
+                    <ul class="nav child_menu" style="display: none;">
+                      <li ng-repeat="item in menuVideo">
+                        <a ng-click="callByMenu(item.action)">
+                          <i ng-class="item.icon"></i><span ng-bind="item.title"></span>
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
@@ -195,5 +206,10 @@
     <script src="scripts/components/user-list/user-list-table-cell-renderns.js"></script>
     <script src="scripts/services/user-list.js"></script>
     <script src="scripts/controllers/user.js"></script>
+    <script src="scripts/services/video-list.js"></script>
+    <script src="scripts/services/videos.js"></script>
+    <script src="scripts/components/video-list/video-list.js"></script>
+    <script src="scripts/components/video-list/video-list-table-settings.js"></script>
+    <script src="scripts/components/video-list/video-list-table-cell-renderns.js"></script>
   </body>
 </html>

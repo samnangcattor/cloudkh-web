@@ -14,5 +14,5 @@
        get: function (path) {
          return $http.get(apiUrl + path);
        }
-     }
+     };
    });
