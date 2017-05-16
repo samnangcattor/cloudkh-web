@@ -22,6 +22,12 @@ angular.module('cloudWebApp')
             .then(function(response) {
               return response.data;
           });
+        },
+        allByUser: function(userId) {
+          return CloudKhApiClient.get('/users/' + userId  + '/videos')
+            .then(function(response) {
+              return response.data;
+          });
         }
       };
   }]);
