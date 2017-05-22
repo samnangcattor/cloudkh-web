@@ -21,6 +21,7 @@ angular
     'ui.router',
     'angular-loading-bar',
     'agGrid',
+    'ng-file-model',
   ])
   .config(['$stateProvider', '$urlRouterProvider', '$locationProvider', 'cfpLoadingBarProvider',
     function($stateProvider, $urlRouterProvider, $locationProvider, cfpLoadingBarProvider) {
@@ -43,6 +44,11 @@ angular
           templateUrl: 'views/user.html',
           controller: 'UserCtrl',
           title: 'User Information'
+        })
+        .state('upload', {
+          url: '^/upload',
+          template: '<upload></upload>',
+          title: 'Upload Video'
         })
         .state('videoList', {
           url: '/videolist',
@@ -73,6 +79,10 @@ angular
       }];
 
       $scope.menuVideo = [{
+        action: function() { $scope.sideNavMenuClick('left', 'upload'); },
+        title: 'Upload Video',
+        icon: 'fa fa-plus-square'
+      },{
         action: function() { $scope.sideNavMenuClick('left', 'videoList'); },
         title: 'Video List',
         icon: 'fa fa-list'
