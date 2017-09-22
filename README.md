@@ -27,6 +27,13 @@ If yo command does not work...
 npm install -g yo
 npm install -g generator-angular
 ```
+# Configure Devlopment
+
+```
+sudo nano /etc/hosts
+Add 
+127.0.0.1 localhost
+127.0.0.1 dev.cloudkh.com
 
 ## Build & development
 

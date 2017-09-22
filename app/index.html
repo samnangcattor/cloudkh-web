@@ -51,7 +51,7 @@
                 <ul class="nav side-menu" style="">
                   <li><a><i class="fa fa-file-video-o"></i> File <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu" style="display: none;">
-                      <li ng-repeat="item in menuVideo">
+                      <li ng-repeat="item in menuVideo" class>
                         <a ng-click="callByMenu(item.action)">
                           <i ng-class="item.icon"></i><span ng-bind="item.title"></span>
                         </a>
@@ -176,6 +176,7 @@
         <!-- /footer content -->
       </div>
     </div>
+    <script async defer src="https://apis.google.com/js/api.js"></script>
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
@@ -189,10 +190,14 @@
     <script src="bower_components/angular-touch/angular-touch.js"></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <script src="bower_components/ag-grid/dist/ag-grid.min.js"></script>
+    <script src="bower_components/ng-file-upload/ng-file-upload.js"></script>
+    <script src="bower_components/ng-file-model/ng-file-model.js"></script>
+    <script src="bower_components/base-64/base64.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
     <link rel="stylesheet" href="styles/main.css">
     <script src="bower_components/gentelella/build/js/custom.min.js"></script>
+    <script src="bower_components/blob/Blob.js"></script>
     <script src="scripts/app.js"></script>
     <script src="scripts/controllers/main.js"></script>
     <script src="scripts/services/cloudkhapiclient.js"></script>
@@ -208,9 +213,11 @@
     <script src="scripts/controllers/user.js"></script>
     <script src="scripts/services/video-list.js"></script>
     <script src="scripts/services/videos.js"></script>
+    <script src="scripts/services/access-tokens.js"></script>
     <script src="scripts/components/video-list/video-list.js"></script>
     <script src="scripts/components/video-list/video-list-table-settings.js"></script>
     <script src="scripts/components/video-list/video-list-table-cell-renderns.js"></script>
     <script src="scripts/components/video-status-list/video-status-list.js"></script>
+    <script src="scripts/components/upload/upload.js"></script>
   </body>
 </html>
